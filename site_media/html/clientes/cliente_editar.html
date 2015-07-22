@@ -1,0 +1,103 @@
+<form class="col s12" id="alta_cliente" action="{EDIT}" method="POST">
+    <div class="row">
+        <div class="input-field">
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" id="Nombre" value="{nombre}">
+        </div>
+        
+		<div class="groupArea">
+	   	       <label>RFC</label>
+	   	       <input name="rfc" id="RFC" placeholder=""  value="{rfc}">
+	   	    </div>
+
+	   	    <div class="groupArea">
+	   	       <label>Direccion</label>
+	   	       <input name="direccion" id="Direccion" placeholder=""  value="{direccion}">
+	   	    </div>
+
+	   	    <div class="groupArea">
+	   	       <label>Localidad</label>
+	   	       <input name="localidad" id="Localidad" placeholder=""  value="{localidad}">
+	   	    </div>
+
+		 <div class="input-field">
+		 	<label>Provincia</label>
+            <!--<input type="categoria" name="categoria" id="categoria">-->
+	   	       <select class="browser-default" name="provincia" id="Provincia"  value="{provincia}">
+	   	       		<option value = "">Seleccione una Provincia</option>
+					<option value = "Qintana Roo">Qintana Roo</option>
+					<option value = "Baja California">Baja California</option>
+					<option value = "Queretaro">Queretaro</option>
+				</select>
+	   	       
+	   	</div>
+
+	   	<div class="input-field">
+	   		<label>Forma de Pago</label>
+            <!--<input type="categoria" name="categoria" id="categoria">-->
+	   	       <select class="browser-default" name="formaPago" id="Forma_de_pago"  value="{formaPago}">
+	   	       		<option value = "">Seleccione una Forma de Pago</option>
+					<option value = "Tarjeta">Tarjeta</option>
+					<option value = "Efectivo">Efectivo</option>
+					<option value = "Credito">Credito</option>
+				</select>
+	   	       
+	   	</div>
+		 <div class="input-field">
+		 	<label>Entidad Bancaria</label>
+            <!--<input type="categoria" name="categoria" id="categoria">-->
+	   	       <select class="browser-default" id="entidadBancaria" name="entidadBancaria"  value="{entidadBancaria}">
+					<option value ="">Seleccione Entidad Bancaria</option>
+					<option value = "Banamex">Banamex</option>
+					<option value = "Bancomer">Bancomer</option>
+					<option value = "Santander">Santander</option>
+				</select>
+	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+	   	</div>
+		
+          <div class="groupArea">
+	   	       <label>Cuenta Bancaria</label>
+	   	       <input name="cuentaBancaria" id="cuentaBancaria" placeholder=""  value="{cuentaBancaria}">
+	   	    </div>
+          <div class="groupArea">
+	   	       <label>Codigo Postal</label>
+	   	       <input name="codigoPostal" id="codigoPostal" placeholder=""  value="{codigoPostal}">
+	   	    </div>
+		  <div class="groupArea">
+	   	       <label>Telefono</label>
+	   	       <input name="telefono" id="telefono" placeholder=""  value="{telefono}">
+	   	    </div>
+		<div class="input-field">
+            <label>Movil</label>
+            <input type="text" name="movil" id="Movil"  value="{movil}">
+        </div>
+		<div class="input-field">
+            <label>Correo Electronico</label>
+            <input type="text" name="email" id="Correro"  value="{email}">
+        </div>
+		<div class="input-field">
+            <label>Direccion Web</label>
+            <input type="text" name="web" id="Direccion_web"  value="{web}">
+        </div>
+		
+		<div class="input-field">
+            <label>Razón Social</label>
+            <input type="text" name="razon" id="" value="{razon}">
+        </div>
+		<div class="input-field">
+            <label>Domicilio Fiscal</label>
+            <input type="text" name="domicilioFiscal" id="" value="{domicilioFiscal}">
+        </div>
+		<div class="input-field">
+            <label>Observaciones</label>
+            <input type="text" name="observacion" id="" value="{observacion}">
+        </div>
+		<br/>
+		<br/>
+		 <div class="input-field">
+		<input type="submit" name="enviar" id="enviar" value="Agregar">
+		</div>
+    </div>
+
+
+</form>

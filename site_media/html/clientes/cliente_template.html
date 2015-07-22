@@ -1,0 +1,37 @@
+CLIENT<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="Text/html; charset=utf=8">
+	<link rel="stylesheet" type="text/css" href="/proy/site_media/css/base_template.css">
+	<link href="/proy/site_media/assets/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+	
+	<title>CRUD Clients:{subtitulo}</title>
+
+</head>cliente
+
+	<nav class="light-green lighten" role"navigation">
+	<div class="nac-wrapper contanier">
+		<a class="logo-container" href="#" class="brand-logo">UNIVERSIDAD TECNOLOGICA DE CANCUN<small>{subtitulo}</small></a>
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/proy/{VIEW_SET_CLIENT}" title="Nuevo cliente">Agregar cliente</a></li>
+                    <li><a href="/proy/{VIEW_GET_CLIENT}" title="Buscar cliente">Buscar/editar cliente</a></li>
+                    <li><a href="/proy/{VIEW_DELETE_CLIENT}" title="Borrar cliente">Borrar cliente</a></li>
+                </ul>
+            </div>
+        </nav>
+
+	<div class="container">
+            <div class="row">
+                <div id="mensaje">
+                    <h4>{mensaje}</h4>
+                </div>
+                <div id="formulario">
+                    {formulario}
+                </div>
+            </div>
+        </div>
+
+        <script src="/proy/site_media/assets/jquery/jquery-2.1.4.js" type="text/javascript"></script>
+        <script src="/proy/site_media/assets/materialize/js/materialize.min.js" type="text/javascript"></script>
+    </body>
+</html>
