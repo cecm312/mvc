@@ -34,7 +34,7 @@
                       <p>En este modulo podras gestionar tus clientes, agregar clientes, eliminarlos y modificar su informacion</p>
                     </div>
                     <div class="card-action">
-                      <a href="/mvc/usuarios" title="">Gestionar Clientes</a>
+                      <a href="/mvc/clientes" title="">Gestionar Clientes</a>
                     </div>
                   </div>
                 </div>

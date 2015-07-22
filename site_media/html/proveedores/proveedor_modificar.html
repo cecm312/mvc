@@ -1,51 +1,95 @@
 <form id="alta_usuario" action="{EDIT}" method="POST">
-<label>Rfc</label>
-<input type="text" name="rfc" id="rfc" value="{rfc}" readonly>
-<label>Nombre</label>
-<input type="text" name="nombre" id="nombre" value="{nombre}">
-<label>Direccion</label>
-<input type="text" name="direccion" id="direccion" value="{direccion}">
-<label>Localidad</label>
-<input type="text" name="localidad" id="localidad" value="{localidad}" >
-<select name="estado" id="estado" class="browser-default selects" data-selected="{estado}">
-    <option value="1">Quintana Roo</option>
-    <option value="2">Veracruz</option>
-    <option value="3">Tabasco</option>
-    <option value="4">Yucatan</option>
-</select>
-<label> Entidad bancaria </label>
-<select name="entidad_bancaria" id="entidad_bancaria" class="browser-default selects" data-selected="{entidad_bancaria}">
-    <option value="1">HSBC</option>
-    <option value="2">Santander</option>
-    <option value="3">Banamez</option>
-    <option value="4">Banorte</option>
-</select>
-<label>Cuenta bancaria</label>
-<input type="text" name="cuenta_bancaria" id="cuanta_bancaria" value="{cuenta_bancaria}">
-<label>Codigo Postal</label>
-<input type="text" name="codigo_postal" id="codigo_postal" value="{codigo_postal}">
-<label>Telefono</label>
-<input type="text" name="telefono" id="telefono" value="{telefono}">
-<label>Movil</label>
-<input type="text" name="movil" id="movil" value="{movil}">
-<label>Correo electronico</label>
-<input type="text" name="correo_electronico" id="correo_electronico" value="{correo_electronico}">
-<label>Direccion web</label>
-<input type="text" name="direccion_web" id="direccion_web" value="{direccion_web}">
-<label>Fecha de alta</label>
-<input type="text" name="fecha_alta" id="fecha_alta" value="{fecha_alta}">
-<label>Observaciones</label>
-<input type="text" name="observaciones" id="observaciones" value="{observaciones}">
-<label>Activa/Status</label>
-<input type="text" name="activa" id="activa" value="{activa}">
-<label>Contacto</label>
-<input type="text" name="contacto" id="contacto" value="{contacto}">
-<input type="submit" name="enviar" id="enviar" value="Guardar">
+
+    <div class="input-field col s12">
+        <input type="text" name="rfc" id="rfc" value="{rfc}" readonly>
+        <label for="rfc"> RFC </label>
+    </div>
+    <div class="input-field col s12">
+        <input type="text" name="nombre" id="nombre" value="{nombre}">
+        <label for="nombre"> Nombre </label>
+    </div>
+    <div class="input-field col s12">
+        <input type="text" name="direccion" id="direccion" value="{direccion}">
+        <label for="direccion"> Direcci&oacuten </label>
+    </div>
+    <div class="input-field col s12">
+        <input type="text" name="localidad" id="localidad" value="{localidad}" >
+        <label for="localidad">Localidad </label>
+    </div>
+
+    <div class="col s12">
+        <label> Estado </label>
+        <select name="estado" id="estado" class="browser-default selects" data-selected="{estado}">
+            <option value="1">Quintana Roo</option>
+            <option value="2">Veracruz</option>
+            <option value="3">Tabasco</option>
+            <option value="4">Yucatan</option>
+        </select>
+    </div>
+
+    <div class="col s12">
+        <label> Entidad bancaria </label>
+        <select name="entidad_bancaria" id="entidad_bancaria" class="browser-default selects" data-selected="{entidad_bancaria}">
+            <option value="1">HSBC</option>
+            <option value="2">Santander</option>
+            <option value="3">Banamez</option>
+            <option value="4">Banorte</option>
+        </select>
+
+    </div>
+    <div class="input-field col s12">
+        <input type="text" name="cuenta_bancaria" id="cuanta_bancaria" value="{cuenta_bancaria}">
+        <label for="cuenta_bancaria"> Cuenta Bancaria </label>
+    </div>
+    <div class="input-field col s12">
+        <input type="text" name="codigo_postal" id="codigo_postal" value="{codigo_postal}">
+        <label for="codigo_postal"> C&oacutedigo postal </label>
+    </div>
+    <div class="input-field col s12">
+        <input type="text" name="telefono" id="telefono" value="{telefono}">
+        <label for="telefono"> Tel&eacutefono </label>
+    </div>
+    <div class="input-field col s12">
+        <input type="text" name="movil" id="movil" value="{movil}">
+        <label for="movil"> M&oacutevil </label>
+    </div>
+    <div class="input-field col s12">
+        <input type="text" name="correo_electronico" id="correo_electronico" value="{correo_electronico}">
+        <label for="correo_electronico"> Correo electronico </label>
+    </div>
+    <div class="input-field col s12">
+        <input type="text" name="direccion_web" id="direccion_web" value="{direccion_web}">
+        <label for="direccion_web"> Direccion web </label>
+    </div>
+    <div class="col s12">
+        <label for="fecha_alta"> Fecha de alta </label>
+        <input type="date" name="fecha_alta" class="datepicker" id="fecha_alta"  data-value="{fecha_alta}">
+    </div>
+
+    <div class="input-field col s12">
+        <textarea name="observaciones" id="observaciones" class="materialize-textarea">{observaciones}</textarea>
+        <label for="observaciones"> Observaciones </label>
+    </div>
+
+    <div class="col s12">
+        <label for="estatus"> Estatus </label>
+        <select name="estatus" id="estatus" class="browser-default selects" data-selected="{estatus}">
+            <option value="1">Activado</option>
+            <option value="2">Desactivado</option>
+        </select>
+    </div>
+    <div class="input-field col s12">
+        <input type="text" name="contacto" id="contacto" value="{contacto}">
+        <label for="contacto"> Contacto </label>
+    </div>
+    <div class="input-field col s12 align-right">
+        <input type="submit" name="enviar" id="enviar" value="Guardar">
+    </div>
 </form>
 
 <script>
-    iniciarSelects(); 
-    </script>
-    <!--Carlos Ernesto Chan Martinez
+    iniciarSelects();
+</script>
+<!--Carlos Ernesto Chan Martinez
 Jose Martin Tec May
 Jardiel Pool Hu-->

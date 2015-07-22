@@ -1,6 +1,6 @@
 <?php
 //importar modelo de abstraccion de BD.
-require_once('../core/DBModel.php');
+require_once('../core/db_abstract_model.php');
 
 class Client extends DBModel{
 	//Propiedades

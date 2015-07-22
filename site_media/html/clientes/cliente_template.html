@@ -1,21 +1,26 @@
-CLIENT<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta http-equiv="Content-Type" content="Text/html; charset=utf=8">
-	<link rel="stylesheet" type="text/css" href="/proy/site_media/css/base_template.css">
-	<link href="/proy/site_media/assets/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
-	
-	<title>CRUD Clients:{subtitulo}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        
+        <link rel="stylesheet" type="text/css" href="/mvc/site_media/css/base_template.css">
+        <link href="/mvc/site_media/assets/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+        <title>CRUD Clients:{subtitulo}</title>
+        
+        <script src="/mvc/site_media/assets/jquery/jquery-2.1.4.js" type="text/javascript"></script>
+        <script src="/mvc/site_media/assets/materialize/js/materialize.min.js" type="text/javascript"></script>
+        <script src="/mvc/site_media/js/cliente.js" type="text/javascript"></script>
 
-</head>cliente
-
-	<nav class="light-green lighten" role"navigation">
+</head>
+    <body>
+	<nav class="light-green lighten" role="navigation">
+             
 	<div class="nac-wrapper contanier">
 		<a class="logo-container" href="#" class="brand-logo">UNIVERSIDAD TECNOLOGICA DE CANCUN<small>{subtitulo}</small></a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/proy/{VIEW_SET_CLIENT}" title="Nuevo cliente">Agregar cliente</a></li>
-                    <li><a href="/proy/{VIEW_GET_CLIENT}" title="Buscar cliente">Buscar/editar cliente</a></li>
-                    <li><a href="/proy/{VIEW_DELETE_CLIENT}" title="Borrar cliente">Borrar cliente</a></li>
+                    <li><a href="/mvc/{VIEW_SET_CLIENT}" title="Nuevo cliente">Agregar cliente</a></li>
+                    <li><a href="/mvc/{VIEW_GET_CLIENT}" title="Buscar cliente">Buscar/editar cliente</a></li>
+                    <li><a href="/mvc/{VIEW_DELETE_CLIENT}" title="Borrar cliente">Borrar cliente</a></li>
                 </ul>
             </div>
         </nav>
@@ -30,8 +35,5 @@ CLIENT<!DOCTYPE html>
                 </div>
             </div>
         </div>
-
-        <script src="/proy/site_media/assets/jquery/jquery-2.1.4.js" type="text/javascript"></script>
-        <script src="/proy/site_media/assets/materialize/js/materialize.min.js" type="text/javascript"></script>
     </body>
 </html>

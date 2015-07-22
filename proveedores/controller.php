@@ -39,7 +39,7 @@ function handler() {
                 'direccion_web' => $proveedor->direccion_web,
                 'fecha_alta' => $proveedor->fecha_alta,
                 'observaciones' => $proveedor->observaciones,
-                'activa' => $proveedor->activa,
+                'estatus' => $proveedor->estatus,
                 'contacto' => $proveedor->contacto
             );
             retornar_vista(VIEW_EDIT_PROVEEDOR, $data);

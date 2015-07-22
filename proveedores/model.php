@@ -27,7 +27,6 @@ class Proveedor extends DBModel {
     public function get($proveedor_rfc = '') {
         if ($proveedor_rfc != '') {
             $this->query = "SELECT nombre, rfc, direccion, localidad, estado, entidad_bancaria, cuenta_bancaria, codigo_postal, telefono, movil, correo_electronico, direccion_web, fecha_alta, observaciones, estatus, contacto FROM proveedor WHERE rfc = '$proveedor_rfc'";
-            echo $this->query;
             $this->get_results_query();
             $this->mensaje = "";
         }
@@ -51,7 +50,6 @@ class Proveedor extends DBModel {
                 }
                 $campos=  "SET ".implode(",", $arrayTemp);
                 $this->query="INSERT INTO proveedor $campos";
-                echo $this->query;
                 $this->execute_query();
                 $this->mensaje = "Proveedor agregado exitosamente";
             } else {
@@ -66,7 +64,7 @@ class Proveedor extends DBModel {
         foreach ($user_data as $campo => $valor) {
             $$campo = $valor;
         }
-        $this->query = "UPDATE proveedor SET nombre='$nombre', rfc='$rfc', direccion='$direccion', localidad='$localidad', estado='$estado', entidad_bancaria='$entidad_bancaria', cuenta_bancaria='$cuenta_bancaria', codigo_postal='$codigo_postal', telefono='$telefono', movil='$movil', correo_electronico='$correo_electronico', direccion_web='$direccion_web', fecha_alta='$fecha_alta', observaciones='$observaciones', activa='$activa', contacto='$contacto' WHERE rfc = '$rfc'";
+        $this->query = "UPDATE proveedor SET nombre='$nombre', rfc='$rfc', direccion='$direccion', localidad='$localidad', estado='$estado', entidad_bancaria='$entidad_bancaria', cuenta_bancaria='$cuenta_bancaria', codigo_postal='$codigo_postal', telefono='$telefono', movil='$movil', correo_electronico='$correo_electronico', direccion_web='$direccion_web', fecha_alta='$fecha_alta', observaciones='$observaciones', estatus='$estatus', contacto='$contacto' WHERE rfc = '$rfc'";
         $this->execute_query();
         $this->mensaje = "Proveedor modificado";
     }
