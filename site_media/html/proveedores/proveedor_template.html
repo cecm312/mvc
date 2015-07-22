@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="/mvc/site_media/css/base_template.css">
+        <link href="/mvc/site_media/assets/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+        <title>CRUD Proveedor: {subtitulo}</title>
+        
+        <script src="/mvc/site_media/assets/jquery/jquery-2.1.4.js" type="text/javascript"></script>
+        <script src="/mvc/site_media/assets/materialize/js/materialize.min.js" type="text/javascript"></script>
+        <script src="/mvc/site_media/js/proveedor.js" type="text/javascript"></script>
+    </head>
+    <body>
+
+        <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="#" class="brand-logo"><small>{subtitulo}</small></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/mvc" title="Home">Home</a></li>
+                    <li><a href="/mvc/{VIEW_SET_PROVEEDOR}" title="Nuevo usuario">Agregar Proveedor</a></li>
+                    <li><a href="/mvc/{VIEW_GET_PROVEEDOR}" title="Buscar usuario">Buscar/editar Proveedor</a></li>
+                    <li><a href="/mvc/{VIEW_DELETE_PROVEEDOR}" title="Borrar usuario">Borrar Proveedor</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div id="mensaje">
+                    <h4>{mensaje}</h4>
+                </div>
+                
+                <div id="formulario">
+                    {formulario}
+                </div>
+            </div>
+        </div>
+
+        
+    </body>
+</html>
+<!--Carlos Ernesto Chan Martinez
+Jose Martin Tec May
+Jardiel Pool Hu-->

@@ -1,0 +1,85 @@
+﻿<form id="alta_usuario" action="{EDIT}" method="POST">
+    <div class="row">
+        <div class="input-field">
+            <label for="referencia">Referencia</label>
+            <input type="text" name="referencia" id="referencia">
+        </div>
+        <div class="input-field">
+            <label>Categoría</label>
+            <!--<input type="categoria" name="categoria" id="categoria">-->
+	   	       <select>
+					<option value = "todas_categorias">Todas las Categorías</option>
+					<option value = "refrigeados">Refrigerados</option>
+					<option value = "abarrotes">Abarrotes</option>
+					<option value = "limpieza">Artículos de Limpieza</option>
+				</select>
+	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+	   	</div>
+		<div class="groupArea">
+	   	       <label>Descripción</label>
+	   	       <textarea name="txtDescripcion" placeholder="Descripción del producto"></textarea>
+	   	    </div>
+		 <div class="input-field">
+            <label>Impuesto</label>
+            <!--<input type="categoria" name="categoria" id="categoria">-->
+	   	       <select>
+					<option value = "10">10%</option>
+					<option value = "15">15%</option>
+					<option value = "20">20%</option>
+				</select>
+	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+	   	</div>
+		 <div class="input-field">
+            <label>Proveedor</label>
+            <!--<input type="categoria" name="categoria" id="categoria">-->
+	   	       <select>
+					<option value ="todos">Todos los Proveedores</option>
+					<option value = "bimbo">Bimbo</option>
+					<option value = "Carne">Carne Mart</option>
+					<option value = "hellmans">Hellmans</option>
+				</select>
+	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+	   	</div>
+		 <div class="input-field">
+            <label>Ubicación</label>
+            <!--<input type="categoria" name="categoria" id="categoria">-->
+	   	       <select>
+					<option value ="todas">Todas las Ubicaciones</option>
+					<option value = "Sur">Zona Sur</option>
+					<option value = "Norte">Zona Norte</option>
+					<option value = "Centro">Zona Centro</option>
+				</select>
+	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+	   	</div>
+        <div class="input-field">
+            <label>Stock</label>
+            <input type="text" name="stock" id="stock">
+        </div>
+        <div class="input-field">
+            <label>Stock Mínimo</label>
+            <input type="text" name="stock2" id="stock2">
+        </div>
+		<div class="groupArea">
+	   	       <label>Observaciones</label>
+	   	       <textarea name="txtObservaciones" placeholder="Observaciones"></textarea>
+	   	</div>
+		<div class="input-field">
+            <label>Precio de Compra $</label>
+            <input type="text" name="precio" id="precio">
+        </div>
+		<div class="input-field">
+            <label>Precio de almacen $</label>
+            <input type="text" name="precio_almacen" id="precio_almacen">
+        </div>
+		<div class="input-field">
+            <label>Precio Tienda $</label>
+            <input type="text" name="precio_tienda" id="precio_tienda">
+        </div>
+		<div class="fecha">
+            <label>Fecha de Ingreso</label>
+            <input type="date" name="fecha_ingreso" id="fecha_ingreso">
+        </div>
+		<br/>
+		<br/>
+    <input type="submit" name="enviar" id="enviar" value="Guardar">
+</form>

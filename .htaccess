@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteRule ^usuarios/ usuarios/controller.php
+RewriteRule ^proveedores/ proveedores/controller.php
+RewriteRule ^clientes/ clientes/controller.php
+RewriteRule ^articulos/ articulos/controller.php
