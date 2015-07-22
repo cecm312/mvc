@@ -17,10 +17,10 @@ $diccionario = array(
         'VIEW_DELETE_CLIENT' => MODULO . VIEW_DELETE_CLIENT . '/'
     ),
     'form_actions' => array(
-        'SET' => '/proy/' . MODULO . SET_CLIENT . '/',
-        'GET' => '/proy/' . MODULO . GET_CLIENT . '/',
-        'EDIT' => '/proy/' . MODULO . EDIT_CLIENT . '/',
-        'DELETE' => '/proy/' . MODULO . DELETE_CLIENT . '/'
+        'SET' => '/mvc/' . MODULO . SET_CLIENT . '/',
+        'GET' => '/mvc/' . MODULO . GET_CLIENT . '/',
+        'EDIT' => '/mvc/' . MODULO . EDIT_CLIENT . '/',
+        'DELETE' => '/mvc/' . MODULO . DELETE_CLIENT . '/'
     )
 );
 
@@ -34,6 +34,18 @@ function render_dinamic_data($html, $data) {
     foreach ($data as $clave => $valor) {
         # code...
         $html = str_replace('{' . $clave . '}', $valor, $html);
+    }
+    return $html;
+}
+
+function create_options($arrayOptions,$selected=""){
+    $html="";
+    foreach($arrayOptions as $option){
+        $sel="";
+        if($option==$selected){
+            $sel="selected";
+        }
+        $html.="<option $sel>$option</option>";
     }
     return $html;
 }

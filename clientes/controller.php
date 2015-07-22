@@ -21,6 +21,8 @@ function handler() {
     $client_data = helper_client_data();
     $cliente = set_obj();
 
+
+
     switch ($event) {
         case SET_CLIENT:
             # code...
@@ -32,10 +34,10 @@ function handler() {
             # code...
             $cliente->get($client_data);
             $data = array('nombre' => $cliente->Nombre, 'rfc' => $cliente->RFC, 'direccion' => $cliente->Direccion,
-                'localidad' => $cliente->Localidad, 'provincia' => $cliente->Provincia, 'formaPago' => $cliente->Forma_de_pago,
-                'entidadBancaria' => $cliente->Entidad_bancaria, 'cuentaBancaria' => $cliente->Cuenta_bancaria, 'codigoPostal' => $cliente->Codigo_postal,
-                'telefono' => $cliente->Telefono, 'movil' => $usuario->Movil, 'email' => $cliente->Correo, 'web' => $cliente->Direccion_web, 'razon' => $cliente->$Razon_social,
-                'domicilioFiscal' => $cliente->$Domicilio_fiscal, 'observacion' => $cliente->Observacion);
+                'localidad' => $cliente->Localidad, 'provincia_options' =>create_options($cliente->arPrivincias,$cliente->Provincia), 'formaPago_options' => create_options($cliente->arFormasPago,$cliente->Forma_de_pago),
+                'entidadBancaria_options' => create_options($cliente->arEntidadBancaria,$cliente->Entidad_bancaria), 'cuentaBancaria' => $cliente->Cuenta_bancaria, 'codigoPostal' => $cliente->Codigo_postal,
+                'telefono' => $cliente->Telefono, 'movil' => $cliente->Movil, 'email' => $cliente->Correo, 'web' => $cliente->Direccion_web, 'razon' => $cliente->Razon_social,
+                'domicilioFiscal' => $cliente->Domicilio_fiscal, 'observacion' => $cliente->Observacion);
 
             retornar_vista(VIEW_EDIT_CLIENT, $data);
             break;
@@ -94,9 +96,9 @@ function helper_client_data() {
             # code...
             $client_data['formaPago'] = $_POST['formaPago'];
         }
-        if (array_key_exists('entidadBancaria', $_POST)) {//Verifica si el indice o clave dada existe.
+        if (array_key_exists('Entidad', $_POST)) {//Verifica si el indice o clave dada existe.
             # code...
-            $client_data['entidadBancaria'] = $_POST['entidadBancaria'];
+            $client_data['Entidad'] = $_POST['Entidad'];
         }
         if (array_key_exists('cuentaBancaria', $_POST)) {//Verifica si el indice o clave dada existe.
             # code...
@@ -113,10 +115,6 @@ function helper_client_data() {
         if (array_key_exists('movil', $_POST)) {//Verifica si el indice o clave dada existe.
             # code...
             $client_data['movil'] = $_POST['movil'];
-        }
-        if (array_key_exists('cuentaBancaria', $_POST)) {//Verifica si el indice o clave dada existe.
-            # code...
-            $client_data['cuentaBancaria'] = $_POST['cuentaBancaria'];
         }
         if (array_key_exists('email', $_POST)) {//Verifica si el indice o clave dada existe.
             # code...
