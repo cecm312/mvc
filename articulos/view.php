@@ -2,10 +2,10 @@
 
 $diccionario = array(
     'subtitle' => array(
-        VIEW_SET_ITEM => 'Crear un nuevo item',
-        VIEW_GET_ITEM => 'Buscar item',
-        VIEW_DELETE_ITEM => 'Eliminar un item',
-        VIEW_EDIT_ITEM => 'Modificar item'
+        VIEW_SET_ITEM => 'Crear un nuevo Articulo',
+        VIEW_GET_ITEM => 'Buscar Articulo',
+        VIEW_DELETE_ITEM => 'Eliminar Articulo',
+        VIEW_EDIT_ITEM => 'Modificar Articulo'
     ),
     'links_menu' => array(
         'VIEW_SET_ITEM' => MODULO . VIEW_SET_ITEM . '/',

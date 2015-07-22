@@ -1,89 +1,86 @@
 ﻿
 <form class="col s12" id="alta_usuario" action="{SET}" method="POST">
     <div class="row">
-        <div class="input-field">
+        <div class="">
             <label for="referencia">Referencia</label>
             <input type="text" name="referencia" id="referencia">
         </div>
-        <div class="input-field">
-            
+        <div class="">
+
             <!--<input type="categoria" name="categoria" id="categoria">-->
-	   	       <select class="browser-default" name="categoria" id="categoria">
-					<option value = "todas_categorias">Todas las Categorías</option>
-					<option value = "refrigeados">Refrigerados</option>
-					<option value = "abarrotes">Abarrotes</option>
-					<option value = "limpieza">Artículos de Limpieza</option>
-				</select>
-	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
-	   	</div>
-		<div class="groupArea">
-	   	       <label>Descripción</label>
-	   	       <textarea name="descripcion" id="descripcion" placeholder="Descripción del producto"></textarea>
-	   	    </div>
-		 <div class="input-field">
-            <!--<input type="categoria" name="categoria" id="categoria">-->
-	   	       <select class="browser-default" name="iva" id="iva">
-					<option value = "10">10%</option>
-					<option value = "15">15%</option>
-					<option value = "20">20%</option>
-				</select>
-	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
-	   	</div>
-		 <div class="input-field">
-            <!--<input type="categoria" name="categoria" id="categoria">-->
-	   	       <select class="browser-default" id="proveedor" name="proveedor">
-					<option value ="todos">Todos los Proveedores</option>
-					<option value = "bimbo">Bimbo</option>
-					<option value = "Carne">Carne Mart</option>
-					<option value = "hellmans">Hellmans</option>
-				</select>
-	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
-	   	</div>
-		 <div class="input-field">
-            <!--<input type="categoria" name="categoria" id="categoria">-->
-	   	       <select class="browser-default" name="ubicacion" id="ubicacion">
-					<option value ="todas">Todas las Ubicaciones</option>
-					<option value = "Sur">Zona Sur</option>
-					<option value = "Norte">Zona Norte</option>
-					<option value = "Centro">Zona Centro</option>
-				</select>
-	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
-	   	</div>
-        <div class="input-field">
+            <select class="browser-default" name="categoria" id="categoria">
+                <option value = "todas_categorias">Todas las Categorías</option>
+                <option value = "refrigeados">Refrigerados</option>
+                <option value = "abarrotes">Abarrotes</option>
+                <option value = "limpieza">Artículos de Limpieza</option>
+            </select>
+            <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+        </div>
+        <div class="">
+            <label>Descripción</label>
+            <textarea name="descripcion" id="descripcion" placeholder="Descripción del producto"></textarea>
+        </div>
+        <div class="">
+            <label>IVA</label>
+            <select class="browser-default" name="iva" id="iva">
+                <option value = "10">10%</option>
+                <option value = "15">15%</option>
+                <option value = "20">20%</option>
+            </select>
+            <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+        </div>
+        <div class="">
+            <label>Proveedor</label>
+            <form method="POST">
+                <select class="browser-default" id="proveedor" name="proveedor">
+                    <option value="all">Todos los proveedores</option>
+                    <option value="provaiders">Bimbo</option>
+                    <option value="pro">gamesa</option>
+                </select>
+            </form>
+            <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+        </div>
+        <div class="">
+            <label>Ubicacion</label>
+            <select class="browser-default" name="ubicacion" id="ubicacion">
+                <option value ="todas">Todas las Ubicaciones</option>
+                <option value = "Sur">Zona Sur</option>
+                <option value = "Norte">Zona Norte</option>
+                <option value = "Centro">Zona Centro</option>
+            </select>
+            <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+        </div>
+        <div class="">
             <label>Stock Maximo</label>
             <input type="text" name="stock_max" id="stock_max">
         </div>
-        <div class="input-field">
-            
-            <input type="text" name="stock_min" id="stock_min">
+        <div class="">
             <label for="stock2">Stock Mínimo</label>
+            <input type="text" name="stock_min" id="stock_min">
         </div>
-		<div class="groupArea">
-	   	       <label>Observaciones</label>
-	   	       <textarea name="observacion" id="observacion" placeholder="Observaciones"></textarea>
-	   	</div>
-		<div class="input-field">
+        <div class="">
+            <label>Observaciones</label>
+            <textarea name="observacion" id="observacion" placeholder="Observaciones"></textarea>
+        </div>
+        <div class="">
             <label>Precio de Compra $</label>
             <input type="text" name="preciocompra" id="preciocompra">
         </div>
-		<div class="input-field">
+        <div class="">
             <label>Precio de almacen $</label>
             <input type="text" name="precioalmacen" id="precioalmacen">
         </div>
-		<div class="input-field">
+        <div class="">
             <label>Precio Tienda $</label>
             <input type="text" name="preciotienda" id="preciotienda">
         </div>
-		<div class="fecha">
+        <div class="">
             <label>Fecha de Ingreso</label>
             <input type="date" name="fechaalta" id="fechaalta">
         </div>
-		
-		<br/>
-		<br/>
-		 <div class="input-field">
-		<input type="submit" name="enviar" id="enviar" value="Agregar">
-		</div>
+        <div class="">
+            <input type="submit" name="enviar" id="enviar" value="Agregar">
+        </div>
     </div>
 
 

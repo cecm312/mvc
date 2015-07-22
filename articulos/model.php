@@ -26,8 +26,10 @@ class Articulo extends DBModel {
     public function get($referencia = '') {
         if ($referencia != '') {
             $this->query = "
-            SELECT id, referencia,categoria,descripcion,iva,ubicacion,stock_max,stock_min,observacion,preciocompra,precioalmacen,preciotienda,fechaalta,proveedor
+            SELECT referencia,categoria,descripcion,iva,ubicacion,stock_max,stock_min,observacion,preciocompra,precioalmacen,preciotienda,fechaalta,proveedor
             FROM articulos WHERE referencia = '$referencia'";
+            
+            echo $this->query;
             $this->get_results_query();
             $this->mensaje = "";
         }
@@ -48,7 +50,6 @@ class Articulo extends DBModel {
                 foreach ($item_data as $campo => $valor) {
                     $$campo = $valor;
                 }
-
                 $this->query = "INSERT INTO articulos VALUES (0,'$referencia','$categoria','$descripcion',$iva,'$ubicacion',$stock_max,$stock_min,'$observacion',$preciocompra,$precioalmacen,$preciotienda,'$fechaalta','$proveedor')";
                 $this->execute_query();
                 $this->mensaje = "Articulo agregado exitosamente";
@@ -65,8 +66,8 @@ class Articulo extends DBModel {
             $$campo = $valor;
         }
         $this->query = "UPDATE articulos 
-        SET referencia='$referencia',categoria='$categoria',descripcion='$descripcion',iva='$iva',ubicacion='$ubicacion',stock_max='$stockMax',stock_min='$stockMin',observacion='$observacion',preciocompra='$precioCompra',precioalmacen='$precioAlmacen',preciotienda='$precioTienda',fechaalta='$fechaAlta'
-        WHERE id = '$id'";
+        SET categoria='$categoria',descripcion='$descripcion',iva='$iva',ubicacion='$ubicacion',stock_max='$stock_max',stock_min='$stock_min',observacion='$observacion',preciocompra='$preciocompra',precioalmacen='$precioalmacen',preciotienda='$preciotienda',fechaalta='$fechaalta'
+        WHERE referencia='$referencia'";
         $this->execute_query();
         $this->mensaje = "Articulo modificado";
     }
@@ -82,5 +83,4 @@ class Articulo extends DBModel {
     }
 
 }
-
 ?>

@@ -1,85 +1,84 @@
 ﻿<form id="alta_usuario" action="{EDIT}" method="POST">
     <div class="row">
-        <div class="input-field">
+        <div class="">
             <label for="referencia">Referencia</label>
-            <input type="text" name="referencia" id="referencia">
+            <input type="text" name="referencia" id="referencia" value="{referencia}" readonly>
         </div>
-        <div class="input-field">
+        <div class="">
             <label>Categoría</label>
             <!--<input type="categoria" name="categoria" id="categoria">-->
-	   	       <select>
-					<option value = "todas_categorias">Todas las Categorías</option>
-					<option value = "refrigeados">Refrigerados</option>
-					<option value = "abarrotes">Abarrotes</option>
-					<option value = "limpieza">Artículos de Limpieza</option>
-				</select>
-	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
-	   	</div>
-		<div class="groupArea">
-	   	       <label>Descripción</label>
-	   	       <textarea name="txtDescripcion" placeholder="Descripción del producto"></textarea>
-	   	    </div>
-		 <div class="input-field">
+            <select name="categoria" class="browser-default">
+                <option value="{categoria}">{categoria}</option>
+            </select>
+            <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+        </div>
+        <div class="">
+            <label>Descripción</label>
+            <textarea name="descripcion" placeholder="Descripción del producto">{descripcion}</textarea>
+        </div>
+        <div class="">
             <label>Impuesto</label>
             <!--<input type="categoria" name="categoria" id="categoria">-->
-	   	       <select>
-					<option value = "10">10%</option>
-					<option value = "15">15%</option>
-					<option value = "20">20%</option>
-				</select>
-	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
-	   	</div>
-		 <div class="input-field">
+            <select name="iva" class="browser-default">
+                <option value = "{iva}">{iva}</option>
+                <option value = "10">10%</option>
+                <option value = "15">15%</option>
+                <option value = "20">20%</option>
+            </select>
+            <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+        </div>
+        <div class="">
             <label>Proveedor</label>
             <!--<input type="categoria" name="categoria" id="categoria">-->
-	   	       <select>
-					<option value ="todos">Todos los Proveedores</option>
-					<option value = "bimbo">Bimbo</option>
-					<option value = "Carne">Carne Mart</option>
-					<option value = "hellmans">Hellmans</option>
-				</select>
-	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
-	   	</div>
-		 <div class="input-field">
+            <select name="proveedor" class="browser-default">
+                <option value ="todos">Todos los Proveedores</option>
+                <option value="{proveedor}">{proveedor}</option>
+                <option value = "bimbo">Bimbo</option>
+                <option value = "Carne">Carne Mart</option>
+                <option value = "hellmans">Hellmans</option>
+            </select>
+            <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+        </div>
+        <div class="">
             <label>Ubicación</label>
             <!--<input type="categoria" name="categoria" id="categoria">-->
-	   	       <select>
-					<option value ="todas">Todas las Ubicaciones</option>
-					<option value = "Sur">Zona Sur</option>
-					<option value = "Norte">Zona Norte</option>
-					<option value = "Centro">Zona Centro</option>
-				</select>
-	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
-	   	</div>
-        <div class="input-field">
+            <select name="ubicacion" class="browser-default">
+                <option value ="todas">Todas las Ubicaciones</option>
+                <option value ="{ubicacion}">{ubicacion}</option>
+                <option value = "Sur">Zona Sur</option>
+                <option value = "Norte">Zona Norte</option>
+                <option value = "Centro">Zona Centro</option>
+            </select>
+            <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+        </div>
+        <div class="">
             <label>Stock</label>
-            <input type="text" name="stock" id="stock">
+            <input type="text" name="stock_max" id="stock" value="{stock_max}">
         </div>
-        <div class="input-field">
+        <div class="">
             <label>Stock Mínimo</label>
-            <input type="text" name="stock2" id="stock2">
+            <input type="text" name="stock_min" id="stock2" value="{stock_min}">
         </div>
-		<div class="groupArea">
-	   	       <label>Observaciones</label>
-	   	       <textarea name="txtObservaciones" placeholder="Observaciones"></textarea>
-	   	</div>
-		<div class="input-field">
+        <div class="">
+            <label>Observaciones</label>
+            <textarea name="observacion" placeholder="Observaciones">{observacion}</textarea>
+        </div>
+        <div class="">
             <label>Precio de Compra $</label>
-            <input type="text" name="precio" id="precio">
+            <input type="text" name="preciocompra" id="precio" value="{preciocompra}">
         </div>
-		<div class="input-field">
+        <div class="">
             <label>Precio de almacen $</label>
-            <input type="text" name="precio_almacen" id="precio_almacen">
+            <input type="text" name="precioalmacen" id="precio_almacen" value="{precioalmacen}">
         </div>
-		<div class="input-field">
+        <div class="">
             <label>Precio Tienda $</label>
-            <input type="text" name="precio_tienda" id="precio_tienda">
+            <input type="text" name="preciotienda" id="precio_tienda" value="{preciotienda}">
         </div>
-		<div class="fecha">
+        <div class="">
             <label>Fecha de Ingreso</label>
-            <input type="date" name="fecha_ingreso" id="fecha_ingreso">
+            <input type="text" name="fechaalta" id="fecha_ingreso" value="{fechaalta}">
         </div>
-		<br/>
-		<br/>
-    <input type="submit" name="enviar" id="enviar" value="Guardar">
+        <input type="submit" name="enviar" id="enviar" value="Guardar">
+    </div>
 </form>
