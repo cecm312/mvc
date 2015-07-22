@@ -1,0 +1,104 @@
+
+<form class="col s12" id="alta_cliente" action="{SET}" method="POST">
+    <div class="row">
+        <div class="input-field">
+            <label>Nombre</label>
+            <input type="text" name="nombre" id="Nombre">
+        </div>
+        
+		<div class="input-field">
+	   	       <label>RFC</label>
+	   	       <input type="text" name="rfc" id="RFC">
+	   	    </div>
+
+	   	    <div class="input-field">
+	   	       <label>Direccion</label>
+	   	       <input type="text" name="direccion" id="Direccion">
+	   	    </div>
+
+	   	    <div class="input-field">
+	   	       <label>Localidad</label>
+	   	       <input type="text" name="localidad" id="Localidad">
+	   	    </div>
+
+		 <div class="input-field">
+            <!--<input type="categoria" name="categoria" id="categoria">-->
+	   	       <select class="browser-default" name="provincia" id="Provincia">
+	   	       		<option value = "">Seleccione una Provincia</option>
+					<option value = "Qintana Roo">Qintana Roo</option>
+					<option value = "Baja California">Baja California</option>
+					<option value = "Queretaro">Queretaro</option>
+				</select>
+	   	       
+	   	</div>
+
+	   	<div class="input-field">
+            <!--<input type="categoria" name="categoria" id="categoria">-->
+	   	       <select class="browser-default" name="formaPago" id="Forma_de_pago">
+	   	       		<option value = "">Seleccione una Forma de Pago</option>
+					<option value = "Tarjeta">Tarjeta</option>
+					<option value = "Efectivo">Efectivo</option>
+					<option value = "Credito">Credito</option>
+				</select>
+	   	       
+	   	</div>
+		 <div class="input-field">
+		 	<!--<label>Entidad Bancaria</label>-->
+            <!--<input type="categoria" name="categoria" id="categoria">-->
+	   	       <select class="browser-default" id="entidadBancaria" name="Entidad">
+					<option value ="">Seleccione Entidad Bancaria</option>
+					<option value = "Banamex">Banamex</option>
+					<option value = "Bancomer">Bancomer</option>
+					<option value = "Santander">Santander</option>
+				</select>
+	   	       <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
+	   	</div>
+		
+          <div class="input-field">
+	   	       <label>Cuenta Bancaria</label>
+	   	       <input type="text" name="cuentaBancaria" id="Cuenta_bancaria">
+	   	    </div>
+          <div class="input-field">
+	   	       <label>Codigo Postal</label>
+	   	       <input type="text" name="codigoPostal" id="Codigo_postal">
+	   	    </div>
+		  <div class="input-field">
+	   	       <label>Telefono</label>
+	   	       <input type="text" name="telefono" id="Telefono">
+	   	    </div>
+		<div class="input-field">
+            <label>Movil</label>
+            <input type="text" name="movil" id="Movil">
+        </div>
+		<div class="input-field">
+            <label>Correo Electronico</label>
+            <input type="text" name="email" id="Correro">
+        </div>
+		<div class="input-field">
+            <label>Direccion Web</label>
+            <input type="text" name="web" id="Direccion_web">
+        </div>
+
+
+        <div class="input-field">
+            <label>Razón Social</label>
+            <input type="text" name="razon" id="Razon_social">
+        </div>
+		<div class="input-field">
+            <label>Domicilio Fiscal</label>
+            <input type="text" name="domicilioFiscal" id="Domicilio_fiscal">
+        </div>
+		<div class="input-field">
+            <label>Observaciones</label>
+            <input type="text" name="observacion" id="Observacion">
+        </div>
+		
+		<br/>
+		<br/>
+		 <div class="input-field">
+		<input type="submit" name="enviar" id="enviar" value="Agregar">
+		</div>
+    </div>
+
+
+</form>

@@ -1,8 +1,8 @@
 <?php
 //importar modelo de abstraccion de BD.
-require_once('../core/db_abstract_model.php');
+require_once('../core/DBModel.php');
 
-class User extends DBModel{
+class Client extends DBModel{
 	//Propiedades
 
 	public $email;
@@ -24,12 +24,11 @@ class User extends DBModel{
 
 //Traer datos de un usuario
 
-	public function get($user_email=''){
-		if($user_email != ''){
-			$this->query="SELECT id, Nombre, RFC, Direccion, Localidad, Provincia, Forma_de_pago, Entidad_bancaria, Cuenta_bancaria, Codigo_postal, Telefono, Movil, Correo, Direccion_web FROM clientes WHERE Correo ='$user_email'";
+	public function get($client_email=''){
+		if($client_email != ''){
+			$this->query="SELECT id, Nombre, RFC, Direccion, Localidad, Provincia, Forma_de_pago, Entidad_bancaria, Cuenta_bancaria, Codigo_postal, Telefono, Movil, Correo, Direccion_web, Razon_social, Domicilio_fiscal, Observacion FROM clientes WHERE Correo ='$user_email'";
 			$this->get_results_query();
 		}
-		var_dump($this->rows);
 		if (count($this->rows)==1) {
 	
 			# code...
@@ -44,16 +43,16 @@ class User extends DBModel{
 
 	}
 //Crear nuevo usuario
-	public function set($user_data=array()){
+	public function set($client_data=array()){
 		
-		if (array_key_exists('email', $user_data)) {
+		if (array_key_exists('email', $client_data)) {
 			# code...
-			if($user_data['email'] != $this->email){
-				foreach ($user_data as $campo => $valor) {
+			if($client_data['email'] != $this->email){
+				foreach ($client_data as $campo => $valor) {
 					# code...
 					$$campo=$valor;
 				}
-				$this->query="INSERT INTO clientes (Nombre, RFC, Direccion, Localidad, Provincia, Forma_de_pago, Entidad_bancaria, Cuenta_bancaria, Codigo_postal, Telefono, Movil, Correo, Direccion_web) values ('$nombre',
+				$this->query="INSERT INTO clientes (Nombre, RFC, Direccion, Localidad, Provincia, Forma_de_pago, Entidad_bancaria, Cuenta_bancaria, Codigo_postal, Telefono, Movil, Correo, Direccion_web,Razon_social, Domicilio_fiscal, Observacion) values ('$nombre',
 	'$rfc',
 	'$direccion',
 	'$localidad',
@@ -65,7 +64,10 @@ class User extends DBModel{
 	'$telefono',
 	'$movil',
 	'$email',
-	'$web')";
+	'$web'
+	'$razon'
+	'$domicilioFiscal'
+	'$observacion')";
 				$this->execute_query();
 				$this->mensaje= 'Usuario agregado exitosamente';
 			}else{
@@ -77,8 +79,8 @@ class User extends DBModel{
 	}
 
 //Modificar un usuario
-	public function edit($user_data=array()){
-		foreach ($user_data as $campo => $valor) {
+	public function edit($client_data=array()){
+		foreach ($client_data as $campo => $valor) {
 			# code...
 			$$campo=$valor;
 		}
@@ -90,13 +92,17 @@ class User extends DBModel{
 	Telefono='$telefono',
 	Movil='$movil',
 	Correo='$email',
-	Direccion_web='$web' WHERE RFC='$rfc'";
+	Direccion_web='$web'
+	Razon_social='$razon'
+	Domicilio_fiscal='$fiscal'
+	Observacion='$observacion'
+	 WHERE RFC='$rfc'";
 		$this->execute_query();
 		$this->mensaje='Usuario Modificado';
 	}
 
-//Eliminar Usuario
-	public function delete($user_email=''){
+//Eliminar Cliente
+	public function delete($client_email=''){
 		$this->query ="DELETE FROM clientes WHERE Correo='$user_email'";
 		$this->execute_query();
 		$this->mensaje='Usuario eliminado';

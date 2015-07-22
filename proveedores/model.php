@@ -27,6 +27,7 @@ class Proveedor extends DBModel {
     public function get($proveedor_rfc = '') {
         if ($proveedor_rfc != '') {
             $this->query = "SELECT nombre, rfc, direccion, localidad, estado, entidad_bancaria, cuenta_bancaria, codigo_postal, telefono, movil, correo_electronico, direccion_web, fecha_alta, observaciones, estatus, contacto FROM proveedor WHERE rfc = '$proveedor_rfc'";
+            echo $this->query;
             $this->get_results_query();
             $this->mensaje = "";
         }
