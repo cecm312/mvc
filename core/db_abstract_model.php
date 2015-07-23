@@ -42,12 +42,20 @@ abstract class DBModel {
 
     //Traer resuktadis de una consulta en un array
     protected function get_results_query() {
+        $this->rows=array();
         $this->open_connection();
         $result = $this->conn->query($this->query);
         while ($this->rows[] = $result->fetch_assoc());
         $result->close();
         $this->close_conection();
         array_pop($this->rows);
+    }
+    protected function get_all_results_query() {
+        $this->open_connection();
+        $result = $this->conn->query($this->query);
+        $this->rows[] = $result->fetch_all();
+        $result->close();
+        $this->close_conection();
     }
 
 }

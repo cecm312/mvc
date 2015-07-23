@@ -8,7 +8,7 @@
             <label>Categoría</label>
             <!--<input type="categoria" name="categoria" id="categoria">-->
             <select name="categoria" class="browser-default">
-                <option value="{categoria}">{categoria}</option>
+              {options_categorias}
             </select>
             <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
         </div>
@@ -20,10 +20,7 @@
             <label>Impuesto</label>
             <!--<input type="categoria" name="categoria" id="categoria">-->
             <select name="iva" class="browser-default">
-                <option value = "{iva}">{iva}</option>
-                <option value = "10">10%</option>
-                <option value = "15">15%</option>
-                <option value = "20">20%</option>
+                {options_impuestos}
             </select>
             <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
         </div>
@@ -31,11 +28,7 @@
             <label>Proveedor</label>
             <!--<input type="categoria" name="categoria" id="categoria">-->
             <select name="proveedor" class="browser-default">
-                <option value ="todos">Todos los Proveedores</option>
-                <option value="{proveedor}">{proveedor}</option>
-                <option value = "bimbo">Bimbo</option>
-                <option value = "Carne">Carne Mart</option>
-                <option value = "hellmans">Hellmans</option>
+               {options_proveedores}
             </select>
             <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
         </div>
@@ -43,11 +36,7 @@
             <label>Ubicación</label>
             <!--<input type="categoria" name="categoria" id="categoria">-->
             <select name="ubicacion" class="browser-default">
-                <option value ="todas">Todas las Ubicaciones</option>
-                <option value ="{ubicacion}">{ubicacion}</option>
-                <option value = "Sur">Zona Sur</option>
-                <option value = "Norte">Zona Norte</option>
-                <option value = "Centro">Zona Centro</option>
+               {options_ubicaciones}
             </select>
             <!--<input type="text" name="txtCategoria" value="" placeholder="Ingrese su Categoría" />-->
         </div>

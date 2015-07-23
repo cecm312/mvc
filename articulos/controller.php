@@ -16,10 +16,17 @@ function handler() {
     }
     $item_data = helper_item_data();
     $articulo = set_obj();
+    
     switch ($event) {
         case SET_ITEM:
             $articulo->set($item_data);
-            $data = array('mensaje' => $articulo->mensaje);
+            $data = array(
+                'mensaje' => $articulo->mensaje,
+                'options_categorias'=> create_options($articulo->arCategorias),
+                'options_impuestos'=> create_options($articulo->arImpuestos),
+                'options_proveedores'=> create_options($articulo->arProveedores),
+                'options_ubicaciones'=> create_options($articulo->arUbicaciones)
+                );
             retornar_vista(VIEW_SET_ITEM, $data);
             break;
         case GET_ITEM:
@@ -29,8 +36,6 @@ function handler() {
                 'referencia' => $articulo->referencia,
                 'categoria' => $articulo->categoria,
                 'descripcion' => $articulo->descripcion,
-                'iva' => $articulo->iva,
-                'ubicacion' => $articulo->ubicacion,
                 'stock_max' => $articulo->stock_max,
                 'stock_min' => $articulo->stock_min,
                 'observacion' => $articulo->observacion,
@@ -38,7 +43,10 @@ function handler() {
                 'precioalmacen' => $articulo->precioalmacen,
                 'preciotienda' => $articulo->preciotienda,
                 'fechaalta' => $articulo->fechaalta,
-                'proveedor' => $articulo->proveedor
+                'options_categorias'=> create_options($articulo->arCategorias,$articulo->categoria),
+                'options_impuestos'=> create_options($articulo->arImpuestos,$articulo->iva),
+                'options_proveedores'=> create_options($articulo->arProveedores,$articulo->proveedor),
+                'options_ubicaciones'=> create_options($articulo->arUbicaciones,$articulo->ubicacion)
             );
             retornar_vista(VIEW_EDIT_ITEM, $data);
             break;
@@ -53,7 +61,13 @@ function handler() {
             retornar_vista(VIEW_GET_ITEM, $data);
             break;
         default:
-            retornar_vista($event);
+            $data = array(
+                'options_categorias'=> create_options($articulo->arCategorias),
+                'options_impuestos'=> create_options($articulo->arImpuestos),
+                'options_proveedores'=> create_options($articulo->arProveedores),
+                'options_ubicaciones'=> create_options($articulo->arUbicaciones)
+                );
+            retornar_vista($event,$data);
     }
 }
 

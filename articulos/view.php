@@ -34,6 +34,18 @@ function render_dinamic_data($html, $data) {
     return $html;
 }
 
+function create_options($arrayOptions,$selected=""){
+    $html="";
+    foreach($arrayOptions as $option){
+        $sel="";
+        if($option==$selected){
+            $sel="selected";
+        }
+        $html.="<option $sel>$option</option>";
+    }
+    return $html;
+}
+
 function retornar_vista($vista, $data = array()) {
     global $diccionario;
     $html = get_template('template');
