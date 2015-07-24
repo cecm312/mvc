@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link rel="stylesheet" type="text/css" href="/mvc/site_media/css/base_template.css">
         <link href="/mvc/site_media/assets/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
-         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="/mvc/site_media/assets/materialize/icons/icon.css" rel="stylesheet">
         <title>Tienda Virtual</title>
         
         <script src="/mvc/site_media/assets/jquery/jquery-2.1.4.js" type="text/javascript"></script>

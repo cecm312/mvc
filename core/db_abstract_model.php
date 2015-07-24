@@ -51,9 +51,12 @@ abstract class DBModel {
         array_pop($this->rows);
     }
     protected function get_all_results_query() {
+        $this->rows=array();
         $this->open_connection();
         $result = $this->conn->query($this->query);
-        $this->rows[] = $result->fetch_all();
+        while ($row = $result->fetch_assoc()) {
+            array_push($this->rows, $row);
+        }
         $result->close();
         $this->close_conection();
     }

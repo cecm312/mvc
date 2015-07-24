@@ -34,8 +34,8 @@ class Articulo extends DBModel {
         $proveedores=array();
         $this->query="SELECT nombre FROM proveedor";
         $this->get_all_results_query();
-        foreach($this->rows[0] as $proveedor=>$value){
-            array_push($proveedores, $value[0]);
+        foreach($this->rows as $proveedor){
+            array_push($proveedores, $proveedor["nombre"]);
         }
         return $proveedores;
     }
@@ -50,7 +50,6 @@ class Articulo extends DBModel {
         if (count($this->rows) == 1) {
             foreach ($this->rows[0] as $propiedad => $valor) {
                 $this->$propiedad = $valor;
-                echo $propiedad;
             }
             $this->mensaje = "Articulo encontrado";
         } else {
@@ -84,7 +83,6 @@ class Articulo extends DBModel {
         $this->query = "UPDATE articulos 
         SET categoria='$categoria',descripcion='$descripcion',iva='$iva',ubicacion='$ubicacion',stock_max='$stock_max',stock_min='$stock_min',observacion='$observacion',preciocompra='$preciocompra',precioalmacen='$precioalmacen',preciotienda='$preciotienda',fechaalta='$fechaalta',proveedor='$proveedor'
         WHERE referencia='$referencia'";
-        echo $this->query;
         $this->execute_query();
         $this->mensaje = "Articulo modificado";
     }

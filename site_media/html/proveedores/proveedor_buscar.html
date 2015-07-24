@@ -1,8 +1,41 @@
-<form id="alta_proveedor" action="{GET}" method="GET">
-<label>RFC</label>
-<input type="text" name="rfc" id="rfc">
-<input type="submit" id="enviar" value="Buscar">
-</form>
+<div class="row">
+    <form id="alta_proveedor" action="{SEARCH}" method="GET" class="col m12 ">
+        <div class="row">
+            <div class="input-field col m12">  
+                <input type="text" name="rfc" id="rfc" value="{rfc}">
+                <label for="rfc">RFC</label>
+            </div>
+            <div class="input-field col m12 right-align">  
+                <button class="btn waves-effect waves-light light-blue lighten-3" type="submit">
+                    <i class="material-icons left">search</i>Buscar
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>
+<div class="row">
+    <div class="col m12">
+        <table class="hoverable bordered bordered">
+            <thead class="light-blue lighten-2">
+                <tr>
+                    <th data-field="rfc">RFC</th>
+                    <th data-field="nombre">Nombre</th>
+                    <th data-field="direccion">Direccion</th>
+                    <th data-field="direccion">Cuenta Bancaria</th>
+                    <th data-field="direccion">Telefono</th>
+                    <th data-field="direccion">Fecha de alta</th>
+                    <th data-field="direccion">Contacto</th>
+                    <th data-field="acciones">Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {trs}
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <!--Carlos Ernesto Chan Martinez
 Jose Martin Tec May

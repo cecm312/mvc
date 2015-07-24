@@ -7,7 +7,10 @@ require_once('view.php');
 function handler() {
     $event = VIEW_GET_PROVEEDOR;
     $uri = $_SERVER['REQUEST_URI'];
-    $peticiones = array(SET_PROVEEDOR, GET_PROVEEDOR, DELETE_PROVEEDOR, EDIT_PROVEEDOR, VIEW_SET_PROVEEDOR, VIEW_GET_PROVEEDOR, VIEW_DELETE_PROVEEDOR, VIEW_EDIT_PROVEEDOR);
+
+    
+    $peticiones = array(SET_PROVEEDOR, GET_PROVEEDOR, DELETE_PROVEEDOR, EDIT_PROVEEDOR, VIEW_SET_PROVEEDOR, VIEW_GET_PROVEEDOR, VIEW_DELETE_PROVEEDOR, VIEW_EDIT_PROVEEDOR,DELETE_PROVIDER_AJAX);
+    
     foreach ($peticiones as $peticion) {
         $uri_peticion = MODULO . $peticion . '/';
         if (strpos($uri, $uri_peticion) == true) {
@@ -19,7 +22,7 @@ function handler() {
     switch ($event) {
         case SET_PROVEEDOR:
             $proveedor->set($proveedor_data);
-            $data = array('mensaje' => $proveedor->mensaje);
+            $data = array('mensaje' => $proveedor->mensaje,"fecha_hoy"=>date("Y-m-d"));
             retornar_vista(VIEW_SET_PROVEEDOR, $data);
             break;
         case GET_PROVEEDOR:
@@ -51,11 +54,17 @@ function handler() {
             break;
         case EDIT_PROVEEDOR:
             $proveedor->edit($proveedor_data);
-            $data = array('mensaje' => $proveedor->mensaje);
+            $proveedores=$proveedor->getAllProveedores();
+            $data=array("trs"=>print_rows("table_tr", $proveedores),'mensaje' => $proveedor->mensaje,"rfc"=>"");
             retornar_vista(VIEW_GET_PROVEEDOR, $data);
             break;
+        case DELETE_PROVIDER_AJAX:
+            return $proveedor->delete($proveedor_data['rfc']);
+            break;
         default:
-            retornar_vista($event);
+            $proveedores=$proveedor->getAllProveedores($proveedor_data);
+            $data=array("trs"=>print_rows("table_tr", $proveedores),"rfc"=>$proveedor_data);
+            retornar_vista($event,$data);
     }
 }
 
@@ -65,8 +74,9 @@ function set_obj() {
 }
 
 function helper_proveedor_data() {
-    $proveedor_data = array();
+    $proveedor_data="";
     if ($_POST) {
+        $proveedor_data = array();
         if (array_key_exists('nombre', $_POST) and $_POST["nombre"]!="") {
             $proveedor_data['nombre'] = $_POST['nombre'];
         }

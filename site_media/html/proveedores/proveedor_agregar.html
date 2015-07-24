@@ -1,18 +1,18 @@
 <form id="proveedor_agregar" class="col s12 m12 l12" action="{SET}" method="POST">
     <div class="input-field col s12">
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="nombre" id="nombre" class="validate" required>
         <label for="nombre"> Nombre </label>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="rfc" id="rfc">
+        <input type="text" name="rfc" id="rfc" required>
         <label for="rfc"> RFC </label>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="direccion" id="direccion">
+        <input type="text" name="direccion" id="direccion" class="validate" required>
         <label for="direccion"> Direcci&oacuten </label>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="localidad" id="localidad">
+        <input type="text" name="localidad" id="localidad" class="validate" required>
         <label for="localidad">Localidad </label>
     </div>
     <div class="col s12">
@@ -36,32 +36,32 @@
 
     </div>
     <div class="input-field col s12">
-        <input type="text" name="cuenta_bancaria" id="cuenta_bancaria">
+        <input type="text" name="cuenta_bancaria" id="cuenta_bancaria" class="validate"required>
         <label for="cuenta_bancaria"> Cuenta Bancaria </label>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="codigo_postal" id="codigo_postal">
+        <input type="text" name="codigo_postal" id="codigo_postal" class="validate" required>
         <label for="codigo_postal"> C&oacutedigo postal </label>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="telefono" id="telefono">
+        <input type="text" name="telefono" id="telefono" class="validate">
         <label for="telefono"> Tel&eacutefono </label>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="movil" id="movil">
+        <input type="text" name="movil" id="movil" class="validate">
         <label for="movil"> M&oacutevil </label>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="correo_electronico" id="correo_electronico">
+        <input type="email" name="correo_electronico" id="correo_electronico" class="validate">
         <label for="correo_electronico"> Correo electronico </label>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="direccion_web" id="direccion_web">
+        <input type="url" name="direccion_web" id="direccion_web" class="validate">
         <label for="direccion_web"> Direccion web </label>
     </div>
     <div class="col s12">
         <label for="fecha_alta"> Fecha de alta </label>
-        <input type="date" name="fecha_alta" class="datepicker" id="fecha_alta">
+        <input type="date" name="fecha_alta" class="datepicker " id="fecha_alta" data-value="{fecha_hoy}"required >   
     </div>
     <div class="input-field col s12">
         <textarea name="observaciones" id="observaciones" class="materialize-textarea"></textarea>
@@ -75,7 +75,7 @@
         </select>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="contacto" id="contacto">
+        <input type="text" name="contacto" id="contacto" required class="validate">
         <label for="contacto"> Contacto </label>
     </div>
     <div class="input-field col s12 align-right">

@@ -23,6 +23,16 @@ class Proveedor extends DBModel {
     function __construct() {
         $this->db_name = 'itic';
     }
+    
+    public function getAllProveedores($rfc=""){
+        $where="";
+        if($rfc!=""){
+            $where="WHERE rfc like '%$rfc%'";
+        }
+        $this->query="SELECT nombre,rfc,direccion,cuenta_bancaria,telefono,DATE(fecha_alta) as fecha_alta,contacto FROM proveedor $where ORDER by fecha_alta";
+        $this->get_all_results_query();
+        return $this->rows;
+    }
 
     public function get($proveedor_rfc = '') {
         if ($proveedor_rfc != '') {

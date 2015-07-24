@@ -16,7 +16,8 @@ $diccionario = array(
         'SET' => '/mvc/' . MODULO . SET_PROVEEDOR . '/',
         'GET' => '/mvc/' . MODULO . GET_PROVEEDOR . '/',
         'DELETE' => '/mvc/' . MODULO . DELETE_PROVEEDOR . '/',
-        'EDIT' => '/mvc/' . MODULO . EDIT_PROVEEDOR . '/'
+        'EDIT' => '/mvc/' . MODULO . EDIT_PROVEEDOR . '/',
+        'SEARCH' => '/mvc/' . MODULO . SEARCH_PROVEEDOR . '/'
     )
 );
 
@@ -29,6 +30,15 @@ function get_template($form = 'get') {
 function render_dinamic_data($html, $data) {
     foreach ($data as $clave => $valor) {
         $html = str_replace('{' . $clave . '}', $valor, $html);
+    }
+    return $html;
+}
+
+function print_rows($template,$arrayData){
+    $temp=get_template($template);
+    $html="";
+    foreach($arrayData as $array){
+        $html.=  render_dinamic_data($temp, $array);
     }
     return $html;
 }
